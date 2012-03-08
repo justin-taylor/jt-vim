@@ -50,5 +50,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'sukima/xmledit'
 Bundle 'SearchComplete'
+Bundle 'scrooloose/nerdcommenter'
 
 filetype plugin indent on 
