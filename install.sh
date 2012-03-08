@@ -1,0 +1,32 @@
+#!/bin/bash
+#installs the vim folder ti the users home directory 
+
+echo "This will overwrite any existing vim settings"
+echo "Continue? (Y/n)"
+
+read con
+
+if [ "$con" == "Y" ]; then
+
+	#copy .vim directory
+	if [ -d ~/.vim ]; then
+		rm -rf ~/.vim
+	fi
+	cp -r .vim ~/.vim
+
+	#copy .vim file
+	if [ -f ~/.vimrc ]; then
+		rm ~/.vimrc
+	fi
+	ln -s ~/.vim/.vimrc ~/.vimrc
+
+	echo "Attempting to install exuberant-ctags"
+	echo ""
+
+	installed=
+	sudo apt-get install exuberant-ctags || installed=no
+
+	if [ "$installed" = no ]; then
+		echo "Could not install exuberant-ctags used by the taglist plugin"
+	fi
+fi
