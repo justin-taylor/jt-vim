@@ -19,6 +19,10 @@ if [ "$con" == "Y" ]; then
 		rm ~/.vimrc
 	fi
 	ln -s ~/.vim/.vimrc ~/.vimrc
+	
+	#install Vundle
+	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+	vim +BundleInstall +qall
 
 	echo "Attempting to install exuberant-ctags"
 	echo ""

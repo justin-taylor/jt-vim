@@ -43,4 +43,16 @@ map tl :TlistToggle<cr>
 map 0  :tabnext<CR>
 map 9  :tabprevious<CR>
 
-map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+map <C-3> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+
+
+" Vundle Settings
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-rails'
+
+filetype plugin indent on 
