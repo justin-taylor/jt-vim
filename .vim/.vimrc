@@ -48,7 +48,7 @@ call vundle#rc()
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-rails'
 Bundle 'sukima/xmledit'
+Bundle 'SearchComplete'
 
 filetype plugin indent on 
