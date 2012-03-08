@@ -15,11 +15,6 @@ set nu
 set spell
 set incsearch
 
-autocmd FileType python setlocal expandtab textwidth=79 tabstop=4 softtabstop=4 shiftwidth=4
-autocmd FileType ruby setlocal expandtab textwidth=79 tabstop=2 softtabstop=2 shiftwidth=2
-autocmd FileType erb setlocal expandtab textwidth=79 tabstop=2 softtabstop=2 shiftwidth=2
-autocmd FileType haml setlocal expandtab textwidth=79 tabstop=2 softtabstop=2 shiftwidth=2
-
 syntax on
 colorscheme desert
 
@@ -54,5 +49,6 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-rails'
+Bundle 'sukima/xmledit'
 
 filetype plugin indent on 
