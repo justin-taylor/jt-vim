@@ -28,6 +28,10 @@ if [ "$con" == "Y" ]; then
 	ln -s ~/.vim/bundle/xmledit/ftplugin/xml.vim ~/.vim/bundle/xmledit/ftplugin/html.vim
 	ln -s ~/.vim/bundle/xmledit/ftplugin/xml.vim ~/.vim/bundle/xmledit/ftplugin/erb.vim
 
+	echo "Installing pyflakes"
+	sudo python ~/.vim/bundle/pyflakes/setup.py install
+
+
 	echo "Attempting to install exuberant-ctags"
 	echo ""
 

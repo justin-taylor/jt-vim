@@ -34,7 +34,7 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 map tn :tabnew<cr>
-map tl :TlistToggle<cr>
+map tl :TagbarToggle<cr>
 map 0  :tabnext<CR>
 map 9  :tabprevious<CR>
 
@@ -51,5 +51,8 @@ Bundle 'gmarik/vundle'
 Bundle 'sukima/xmledit'
 Bundle 'SearchComplete'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'pyflakes/pyflakes'
+Bundle 'Raimondi/delimitMate'
+Bundle 'majutsushi/tagbar'
 
 filetype plugin indent on 
