@@ -15,6 +15,29 @@ set nu
 set spell
 set incsearch
 
+set relativenumber
+function! NumberToggle()
+	if(&relativenumber == 1)
+		set number
+	else
+		set relativenumber
+	endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
+
+
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+
 syntax on
 colorscheme desert
 
@@ -51,8 +74,11 @@ Bundle 'gmarik/vundle'
 Bundle 'sukima/xmledit'
 Bundle 'SearchComplete'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/vim-statline'
 Bundle 'pyflakes/pyflakes'
-Bundle 'Raimondi/delimitMate'
 Bundle 'majutsushi/tagbar'
+Bundle 'ervandew/supertab'
+Bundle 'scrooloose/syntastic'
 
 filetype plugin indent on 
