@@ -82,3 +82,8 @@ Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
 
 filetype plugin indent on 
+
+if bufwinnr(1)
+	map + <C-W>+
+	map - <C-W>-
+endif
