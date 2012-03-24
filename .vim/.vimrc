@@ -26,24 +26,18 @@ endfunc
 
 nnoremap <C-n> :call NumberToggle()<cr>
 
-
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-nnoremap j gj
-nnoremap k gk
-
 syntax on
 colorscheme desert
 
 let mapleader = ','
+
+" TagBar settings
 let g:ctags_path='/usr/local/bin/ctags'
 let g:ctags_statusline=1 
+let g:tagbar_autoclose = 1
+let g:tagbar_autofocus = 1
+let g:tagbar_autoshowtag = 1
+let g:tagbar_sort = 0
 
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let Tlist_Use_Right_Window = 1
@@ -64,6 +58,8 @@ map 9  :tabprevious<CR>
 map <C-3> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 
 
+
+
 " Vundle Settings
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -77,6 +73,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/vim-statline'
 Bundle 'pyflakes/pyflakes'
+Bundle 'Raimondi/delimitMate'
 Bundle 'majutsushi/tagbar'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
