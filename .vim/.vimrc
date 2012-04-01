@@ -52,8 +52,8 @@ map <C-l> <C-W>l
 
 map tn :tabnew<cr>
 map tl :TagbarToggle<cr>
-map <C-H>  :tabnext<CR>
-map <C-L>  :tabprevious<CR>
+map <C-0>  :tabnext<CR>
+map <C-9>  :tabprevious<CR>
 
 map <C-3> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 
