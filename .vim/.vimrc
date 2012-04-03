@@ -12,7 +12,6 @@ set wrap linebreak nolist
 set ls=2
 set title
 set nu
-set spell
 set incsearch
 
 set relativenumber
@@ -52,8 +51,8 @@ map <C-l> <C-W>l
 
 map tn :tabnew<cr>
 map tl :TagbarToggle<cr>
-map <C-0>  :tabnext<CR>
-map <C-9>  :tabprevious<CR>
+map <C-i>  :tabnext<CR>
+map <C-u>  :tabprevious<CR>
 
 map <C-3> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 
