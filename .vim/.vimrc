@@ -16,13 +16,12 @@ set incsearch
 
 set relativenumber
 function! NumberToggle()
-	if(&relativenumber == 1)
-		set number
-	else
+	if(&relativenumber != 1)
 		set relativenumber
+	else
+		set number
 	endif
 endfunc
-
 nnoremap <C-n> :call NumberToggle()<cr>
 
 syntax on
@@ -44,15 +43,18 @@ let Tlist_Use_Right_Window = 1
 map <S-Enter> O<Esc>
 map <CR> o<Esc>
 map nt :NERDTreeToggle<CR>
+
+"map <C-j> <C-W>j
+"map <C-k> <C-W>k
+"map <C-h> <C-W>h
+"map <C-l> <C-W>l
 map <C-j> <C-W>j
 map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+map <C-l> :tabnext<CR>
+map <C-h> :tabprevious<CR>
 
 map tn :tabnew<cr>
 map tl :TagbarToggle<cr>
-map <C-u>  :tabnext<CR>
-map <C-y>  :tabprevious<CR>
 
 map <C-3> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 
