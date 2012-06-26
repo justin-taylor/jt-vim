@@ -77,6 +77,7 @@ Bundle 'pyflakes/pyflakes'
 Bundle 'majutsushi/tagbar'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-markdown'
 
 filetype plugin indent on 
 
