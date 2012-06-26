@@ -43,6 +43,7 @@ let Tlist_Use_Right_Window = 1
 map <S-Enter> O<Esc>
 map <CR> o<Esc>
 map nt :NERDTreeToggle<CR>
+map mt :NERDTreeMirror<CR>
 
 "map <C-j> <C-W>j
 "map <C-k> <C-W>k
