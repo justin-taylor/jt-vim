@@ -1,6 +1,8 @@
 #!/bin/bash
 #installs the vim folder ti the users home directory 
 
+EXUBERANT_CTAGS='http://downloads.sourceforge.net/project/ctags/ctags/5.8/ctags-5.8.tar.gz?r=http%3A%2F%2Fctags.sourceforge.net%2F&ts=1351905047&use_mirror=heanet'
+
 echo "This will overwrite any existing vim settings"
 echo "Continue? (Y/n)"
 
@@ -58,10 +60,12 @@ if [ "$con" == "Y" ]; then
 	echo "(Y/n)"
 	read con
 	if [ "$con" == "Y" ]; then
-		installed=
-		sudo apt-get install exuberant-ctags || installed=no
-		if [ "$installed" = no ]; then
-			echo "Could not install exuberant-ctags used by the taglist plugin"
-		fi
+		wget -O ctags.tar.gz $EXUBERANT_CTAGS
+		tar -zxvf ctags.tar.gz
+		cd ctags-5.8
+		./configure
+		make && sudo make install
+		cd ..
+		rm -rf ctags.tar.gz ctags-5.8
 	fi
 fi
