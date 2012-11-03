@@ -13,6 +13,7 @@ set ls=2
 set title
 set nu
 set incsearch
+let g:NERDTreeDirArrows=0
 
 set relativenumber
 function! NumberToggle()
