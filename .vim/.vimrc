@@ -83,6 +83,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-markdown'
 Bundle 'kien/ctrlp.vim'
 Bundle 'hsanson/vim-android'
+Bundle 'Shougo/vimproc'
 
 filetype plugin indent on 
 
