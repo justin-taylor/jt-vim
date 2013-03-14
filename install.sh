@@ -17,13 +17,13 @@ if [ "$con" == "Y" ]; then
 
 	DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 	cd $DIR
-	cp -r .vim ~/.vim
+	ln -snf $DIR/.vim ~/.vim
 
 	#link to .vimrc file
 	if [ -f ~/.vimrc ]; then
 		rm ~/.vimrc
 	fi
-	ln -s ~/.vim/.vimrc ~/.vimrc
+	ln -snf ~/.vim/.vimrc ~/.vimrc
 	
 	#install Vundle
 	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle

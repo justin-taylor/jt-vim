@@ -1,5 +1,5 @@
 set nocompatible
-set autoindent
+set smartindent
 set hidden
 set wildmenu
 set scrolloff=3
@@ -14,6 +14,7 @@ set title
 set nu
 set incsearch
 let g:NERDTreeDirArrows=0
+let g:NERDTreeShowLineNumbers=1
 
 set relativenumber
 function! NumberToggle()
@@ -80,6 +81,8 @@ Bundle 'majutsushi/tagbar'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-markdown'
+Bundle 'kien/ctrlp.vim'
+Bundle 'hsanson/vim-android'
 
 filetype plugin indent on 
 
@@ -87,3 +90,6 @@ if bufwinnr(1)
 	map + <C-W>+
 	map - <C-W>-
 endif
+set tags+=/Users/jtaylor/.vim/tags
+
+let g:android_sdk_path='/Users/jtaylor/Development/android/sdk'
