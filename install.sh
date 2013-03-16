@@ -29,10 +29,6 @@ if [ "$con" == "Y" ]; then
 	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 	vim +BundleInstall +qall
 
-	echo "Creating sym links to use xmledit on other file types"
-	ln -s ~/.vim/bundle/xmledit/ftplugin/xml.vim ~/.vim/bundle/xmledit/ftplugin/html.vim
-	ln -s ~/.vim/bundle/xmledit/ftplugin/xml.vim ~/.vim/bundle/xmledit/ftplugin/erb.vim
-
 	echo "Would you like to install pyflakes (python sytax checker)"
 	echo "(Y/n)"
 	read con

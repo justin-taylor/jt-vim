@@ -16,6 +16,13 @@ set incsearch
 let g:NERDTreeDirArrows=0
 let g:NERDTreeShowLineNumbers=1
 
+setlocal expandtab
+setlocal textwidth=80
+setlocal tabstop=4
+setlocal softtabstop=4
+setlocal shiftwidth=4
+
+
 set relativenumber
 function! NumberToggle()
 	if(&relativenumber != 1)
@@ -91,6 +98,12 @@ if bufwinnr(1)
 	map + <C-W>+
 	map - <C-W>-
 endif
-set tags+=/Users/jtaylor/.vim/tags
 
-let g:android_sdk_path='/Users/jtaylor/Development/android/sdk'
+set tags+=/Users/jtaylor/.vim/tags
+let g:android_sdk_path='/opt/android-sdk/'
+
+let g:syntastic_java_javac_config_file_enabled=1
+let g:syntastic_java_checkstyle_conf_file='~/.vim/android_classpath'
+
+autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
+autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
