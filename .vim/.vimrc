@@ -13,6 +13,7 @@ set ls=2
 set title
 set nu
 set incsearch
+set backspace=indent,eol,start
 let g:NERDTreeDirArrows=0
 let g:NERDTreeShowLineNumbers=1
 
@@ -22,8 +23,8 @@ setlocal tabstop=4
 setlocal softtabstop=4
 setlocal shiftwidth=4
 
-
 set relativenumber
+autocmd BufNew,BufAdd,BufCreate,BufRead,BufNewFile * set relativenumber
 function! NumberToggle()
 	if(&relativenumber != 1)
 		set relativenumber
@@ -51,25 +52,15 @@ let Tlist_Use_Right_Window = 1
 
 map <S-Enter> O<Esc>
 map <CR> o<Esc>
+
 map nt :NERDTreeToggle<CR>
 map mt :NERDTreeMirror<CR>
 
-"map <C-j> <C-W>j
-"map <C-k> <C-W>k
-"map <C-h> <C-W>h
-"map <C-l> <C-W>l
-map <C-j> <C-W>j
-map <C-k> <C-W>k
 map <C-l> :tabnext<CR>
 map <C-h> :tabprevious<CR>
 
 map tn :tabnew<cr>
 map tl :TagbarToggle<cr>
-
-map <C-3> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
-
-
-
 
 " Vundle Settings
 set rtp+=~/.vim/bundle/vundle/
@@ -95,8 +86,10 @@ Bundle 'Shougo/vimproc'
 filetype plugin indent on 
 
 if bufwinnr(1)
-	map + <C-W>+
+	map = <C-W>+
 	map - <C-W>-
+	map + <C-W>>
+	map _ <C-W><
 endif
 
 set tags+=/Users/jtaylor/.vim/tags
