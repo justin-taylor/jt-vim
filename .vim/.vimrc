@@ -35,7 +35,7 @@ endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
 
 syntax on
-colorscheme desert
+colorscheme wombat256
 
 let mapleader = ','
 
@@ -56,11 +56,15 @@ map <CR> o<Esc>
 map nt :NERDTreeToggle<CR>
 map mt :NERDTreeMirror<CR>
 
+map <F4> :execute "vimgrep /" .expand("<cword>") . "/j **" <Bar> cw<CR>
+
 map <C-l> :tabnext<CR>
 map <C-h> :tabprevious<CR>
 
 map tn :tabnew<cr>
 map tl :TagbarToggle<cr>
+
+set wildignore+=*/bin,*/gen,*.class,*.swp,*.zip,*.so
 
 " Vundle Settings
 set rtp+=~/.vim/bundle/vundle/
