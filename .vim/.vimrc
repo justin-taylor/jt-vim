@@ -35,7 +35,7 @@ endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
 
 syntax on
-colorscheme wombat256
+colorscheme desert
 
 let mapleader = ','
 
@@ -49,6 +49,8 @@ let g:tagbar_sort = 0
 
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let Tlist_Use_Right_Window = 1
+
+set tags=./tags,tags;
 
 map <S-Enter> O<Esc>
 map <CR> o<Esc>
@@ -86,6 +88,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'kien/ctrlp.vim'
 Bundle 'hsanson/vim-android'
 Bundle 'Shougo/vimproc'
+Bundle 'hughbien/md-vim'
 
 filetype plugin indent on 
 
@@ -104,3 +107,19 @@ let g:syntastic_java_checkstyle_conf_file='~/.vim/android_classpath'
 
 autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
+
+set swapfile
+set dir=~/.tmp
+set backup
+set backupdir=~/.tmp
+
+"set so=8
+"set encoding=utf8
+"set list listchars=tab:⇥⇥,eol:↵
+"augroup CursorLine
+  "au!
+  "au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  "au VimEnter,WinEnter,BufWinEnter * setlocal cursorcolumn
+  "au WinLeave * setlocal nocursorline
+  "au WinLeave * setlocal nocursorcolumn
+"augroup END
