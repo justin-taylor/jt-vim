@@ -109,9 +109,9 @@ autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
 
 set swapfile
-set dir=~/.tmp
+set dir=~/.vim/backups
 set backup
-set backupdir=~/.tmp
+set backupdir=~/.vim/backups
 
 "set so=8
 "set encoding=utf8
