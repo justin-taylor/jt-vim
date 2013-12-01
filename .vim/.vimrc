@@ -14,6 +14,7 @@ set title
 set nu
 set incsearch
 set backspace=indent,eol,start
+set t_Co=256
 let g:NERDTreeDirArrows=0
 let g:NERDTreeShowLineNumbers=1
 
@@ -35,7 +36,7 @@ endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
 
 syntax on
-colorscheme desert
+colorscheme jtcolor
 
 let mapleader = ','
 
@@ -82,6 +83,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'kien/ctrlp.vim'
 Bundle 'hsanson/vim-android'
 Bundle 'Shougo/vimproc'
+Bundle 'saltstack/salt-vim'
 
 filetype plugin indent on 
 
