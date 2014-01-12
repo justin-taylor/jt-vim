@@ -109,6 +109,7 @@ let g:syntastic_java_checkstyle_conf_file='~/.vim/android_classpath'
 
 autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
+autocmd! BufNewFile,BufRead *.sls setlocal ft=sls
 
 set swapfile
 set dir=~/.vim/backups
