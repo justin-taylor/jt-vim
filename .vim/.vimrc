@@ -94,7 +94,6 @@ Bundle 'saltstack/salt-vim'
 Bundle 'hughbien/md-vim'
 Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'sentientmachine/Pretty-Vim-Python'
-Bundle 'hsanson/vim-android'
 
 filetype plugin indent on 
 
