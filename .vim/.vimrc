@@ -13,8 +13,8 @@ set ls=2
 set title
 set nu
 set incsearch
-set backspace=indent,eol,start
 set t_Co=256
+set backspace=indent,eol,start
 let g:NERDTreeDirArrows=0
 let g:NERDTreeShowLineNumbers=1
 
@@ -36,7 +36,8 @@ endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
 
 syntax on
-colorscheme jtcolor
+
+colorscheme desert
 
 let mapleader = ','
 
@@ -91,6 +92,9 @@ Bundle 'hsanson/vim-android'
 Bundle 'Shougo/vimproc'
 Bundle 'saltstack/salt-vim'
 Bundle 'hughbien/md-vim'
+Bundle 'ekalinin/Dockerfile.vim'
+Bundle 'sentientmachine/Pretty-Vim-Python'
+Bundle 'hsanson/vim-android'
 
 filetype plugin indent on 
 
@@ -106,23 +110,17 @@ let g:android_sdk_path='/opt/android-sdk/'
 
 let g:syntastic_java_javac_config_file_enabled=1
 let g:syntastic_java_checkstyle_conf_file='~/.vim/android_classpath'
+let g:syntastic_python_checkers = ['pyflakes']
 
-autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
-autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
-autocmd! BufNewFile,BufRead *.sls setlocal ft=sls
+autocmd BufNewFile,BufRead *.pde setlocal ft=arduino
+autocmd BufNewFile,BufRead *.ino setlocal ft=arduino
+autocmd BufNewFile,BufRead *.sls setlocal ft=sls
 
 set swapfile
 set dir=~/.vim/backups
 set backup
 set backupdir=~/.vim/backups
 
-"set so=8
-"set encoding=utf8
-"set list listchars=tab:⇥⇥,eol:↵
-"augroup CursorLine
-  "au!
-  "au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  "au VimEnter,WinEnter,BufWinEnter * setlocal cursorcolumn
-  "au WinLeave * setlocal nocursorline
-  "au WinLeave * setlocal nocursorcolumn
-"augroup END
+if filereadable(glob('./.vimrc.local'))
+    so ./.vimrc.local
+endif

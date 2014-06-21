@@ -27,6 +27,12 @@ else
   runtime! syntax/cpp.vim
 endif
 
+setlocal expandtab
+setlocal textwidth=80
+setlocal tabstop=4
+setlocal softtabstop=4
+setlocal shiftwidth=4
+
 syn keyword arduinoConstant  BIN CHANGE DEC DEFAULT EXTERNAL FALLING HALF_PI HEX
 syn keyword arduinoConstant  HIGH INPUT INTERNAL INTERNAL1V1 INTERNAL2V56 LOW
 syn keyword arduinoConstant  LSBFIRST MSBFIRST OCT OUTPUT PI RISING TWO_PI
