@@ -35,7 +35,7 @@ function! NumberToggle()
 endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
 
-syntax on
+syntax enable
 
 colorscheme desert
 
@@ -94,6 +94,7 @@ Bundle 'saltstack/salt-vim'
 Bundle 'hughbien/md-vim'
 Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'sentientmachine/Pretty-Vim-Python'
+Bundle 'oblitum/rainbow'
 
 filetype plugin indent on 
 
@@ -114,12 +115,14 @@ let g:syntastic_python_checkers = ['pyflakes']
 autocmd BufNewFile,BufRead *.pde setlocal ft=arduino
 autocmd BufNewFile,BufRead *.ino setlocal ft=arduino
 autocmd BufNewFile,BufRead *.sls setlocal ft=sls
+au BufNewFile,BufRead *.gradle set filetype=groovy
 
 set swapfile
 set dir=~/.vim/backups
 set backup
 set backupdir=~/.vim/backups
 
-if filereadable(glob('./.vimrc.local'))
-    so ./.vimrc.local
-endif
+set wildignore+=*/build/*,*.so,*.swp,*.zip 
+
+let g:rainbow_active=1
+
