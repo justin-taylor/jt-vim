@@ -18,11 +18,11 @@ set backspace=indent,eol,start
 let g:NERDTreeDirArrows=0
 let g:NERDTreeShowLineNumbers=1
 
-setlocal expandtab
-setlocal textwidth=80
-setlocal tabstop=4
-setlocal softtabstop=4
-setlocal shiftwidth=4
+set expandtab
+set textwidth=80
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 set relativenumber
 autocmd BufNew,BufAdd,BufCreate,BufRead,BufNewFile * set relativenumber
@@ -95,6 +95,7 @@ Bundle 'hughbien/md-vim'
 Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'sentientmachine/Pretty-Vim-Python'
 Bundle 'oblitum/rainbow'
+Bundle 'sheerun/vim-polyglot'
 
 filetype plugin indent on 
 
@@ -115,6 +116,7 @@ let g:syntastic_python_checkers = ['pyflakes']
 autocmd BufNewFile,BufRead *.pde setlocal ft=arduino
 autocmd BufNewFile,BufRead *.ino setlocal ft=arduino
 autocmd BufNewFile,BufRead *.sls setlocal ft=sls
+autocmd BufNewFile,BufRead *.coffee setlocal ft=coffee
 au BufNewFile,BufRead *.gradle set filetype=groovy
 
 set swapfile
