@@ -1,1 +1,1 @@
-java.vim
+./ruby.vim

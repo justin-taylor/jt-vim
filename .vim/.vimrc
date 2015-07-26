@@ -20,9 +20,9 @@ let g:NERDTreeShowLineNumbers=1
 
 set expandtab
 set textwidth=80
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 set relativenumber
 autocmd BufNew,BufAdd,BufCreate,BufRead,BufNewFile * set relativenumber
@@ -96,6 +96,7 @@ Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'sentientmachine/Pretty-Vim-Python'
 Bundle 'oblitum/rainbow'
 Bundle 'sheerun/vim-polyglot'
+Bundle 'osyo-manga/vim-brightest'
 
 filetype plugin indent on 
 
@@ -112,11 +113,21 @@ let g:android_sdk_path='/opt/android-sdk/'
 let g:syntastic_java_javac_config_file_enabled=1
 let g:syntastic_java_checkstyle_conf_file='~/.vim/android_classpath'
 let g:syntastic_python_checkers = ['pyflakes']
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 autocmd BufNewFile,BufRead *.pde setlocal ft=arduino
 autocmd BufNewFile,BufRead *.ino setlocal ft=arduino
 autocmd BufNewFile,BufRead *.sls setlocal ft=sls
 autocmd BufNewFile,BufRead *.coffee setlocal ft=coffee
+autocmd BufNewFile,BufRead *.slim setlocal ft=slim
+autocmd BufNewFile,BufRead Podfile setlocal ft=ruby
 au BufNewFile,BufRead *.gradle set filetype=groovy
 
 set swapfile
