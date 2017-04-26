@@ -26,18 +26,8 @@ set shiftwidth=2
 
 set relativenumber
 autocmd BufNew,BufAdd,BufCreate,BufRead,BufNewFile * set relativenumber
-function! NumberToggle()
-	if(&relativenumber != 1)
-		set relativenumber
-	else
-		set number
-	endif
-endfunc
-nnoremap <C-n> :call NumberToggle()<cr>
-
 syntax enable
-
-colorscheme desert
+colorscheme jt_monokai
 
 let mapleader = ','
 
@@ -54,6 +44,10 @@ let Tlist_Use_Right_Window = 1
 
 set tags=./tags,tags;
 
+function! Android_tags()
+  se tags+=/Volume/android/tablet-os-builder/src/tags
+endfunc
+
 map <S-Enter> O<Esc>
 map <CR> o<Esc>
 
@@ -67,8 +61,7 @@ map <C-h> :tabprevious<CR>
 
 map tn :tabnew<cr>
 map tl :TagbarToggle<cr>
-
-set wildignore+=*/bin,*/gen,*.class,*.swp,*.zip,*.so
+nnoremap <C-f> <C-]><CR>
 
 " Vundle Settings
 set rtp+=~/.vim/bundle/vundle/
@@ -97,6 +90,7 @@ Bundle 'sentientmachine/Pretty-Vim-Python'
 Bundle 'oblitum/rainbow'
 Bundle 'sheerun/vim-polyglot'
 Bundle 'osyo-manga/vim-brightest'
+Bundle 'ludovicchabant/vim-gutentags'
 
 filetype plugin indent on 
 
@@ -118,17 +112,20 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_quiet_messages = { "level": "warnings" }
+
+
 
 autocmd BufNewFile,BufRead *.pde setlocal ft=arduino
 autocmd BufNewFile,BufRead *.ino setlocal ft=arduino
 autocmd BufNewFile,BufRead *.sls setlocal ft=sls
 autocmd BufNewFile,BufRead *.coffee setlocal ft=coffee
 autocmd BufNewFile,BufRead *.slim setlocal ft=slim
+autocmd BufNewFile,BufRead *.gradle set filetype=groovy
 autocmd BufNewFile,BufRead Podfile setlocal ft=ruby
-au BufNewFile,BufRead *.gradle set filetype=groovy
 
 set swapfile
 set dir=~/.vim/backups
@@ -136,6 +133,14 @@ set backup
 set backupdir=~/.vim/backups
 
 set wildignore+=*/build/*,*.so,*.swp,*.zip 
+set wildignore+=*/bin,*/gen,*.class,*.swp,*.zip,*.so
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn|build|bin)$',
+  \ 'file': '\v\.(exe|jar|so|dll|class|png|jpeg|jpg)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
 let g:rainbow_active=1
+let g:gutentags_cache_dir="./.git/"
+let g:rainbow_ctermfgs = ['lightblue','magenta']
 
