@@ -13,6 +13,8 @@ set ls=2
 set title
 set nu
 set incsearch
+set cursorcolumn
+set cursorline
 set t_Co=256
 set backspace=indent,eol,start
 let g:NERDTreeDirArrows=0
@@ -34,7 +36,6 @@ let mapleader = ','
 " TagBar settings
 let g:ctags_path='/usr/local/bin/ctags'
 let g:ctags_statusline=1 
-let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
 let g:tagbar_autoshowtag = 1
 let g:tagbar_sort = 0
@@ -81,7 +82,6 @@ Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-markdown'
 Bundle 'kien/ctrlp.vim'
-Bundle 'hsanson/vim-android'
 Bundle 'Shougo/vimproc'
 Bundle 'saltstack/salt-vim'
 Bundle 'hughbien/md-vim'
@@ -90,7 +90,9 @@ Bundle 'sentientmachine/Pretty-Vim-Python'
 Bundle 'oblitum/rainbow'
 Bundle 'sheerun/vim-polyglot'
 Bundle 'osyo-manga/vim-brightest'
-Bundle 'ludovicchabant/vim-gutentags'
+Bundle 'fatih/vim-go'
+Bundle 'ternjs/tern_for_vim'
+Bundle 'vim-scripts/csv.vim'
 
 filetype plugin indent on 
 
@@ -102,7 +104,7 @@ if bufwinnr(1)
 endif
 
 set tags+=/Users/jtaylor/.vim/tags
-let g:android_sdk_path='/opt/android-sdk/'
+let g:android_sdk_path='/Users/justintaylor/Development/android-sdk'
 
 let g:syntastic_java_javac_config_file_enabled=1
 let g:syntastic_java_checkstyle_conf_file='~/.vim/android_classpath'
@@ -126,6 +128,7 @@ autocmd BufNewFile,BufRead *.coffee setlocal ft=coffee
 autocmd BufNewFile,BufRead *.slim setlocal ft=slim
 autocmd BufNewFile,BufRead *.gradle set filetype=groovy
 autocmd BufNewFile,BufRead Podfile setlocal ft=ruby
+autocmd BufNewFile,BufRead *.go set filetype=go
 
 set swapfile
 set dir=~/.vim/backups
@@ -135,12 +138,44 @@ set backupdir=~/.vim/backups
 set wildignore+=*/build/*,*.so,*.swp,*.zip 
 set wildignore+=*/bin,*/gen,*.class,*.swp,*.zip,*.so
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn|build|bin)$',
+  \ 'dir':  '\v[\/]\.(git|hg|svn)|[\/](build|bin|node_modules|dist)$',
   \ 'file': '\v\.(exe|jar|so|dll|class|png|jpeg|jpg)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
+
+let g:tagbar_type_go = {
+	\ 'ctagstype' : 'go',
+	\ 'kinds'     : [
+		\ 'p:package',
+		\ 'i:imports:1',
+		\ 'c:constants',
+		\ 'v:variables',
+		\ 't:types',
+		\ 'n:interfaces',
+		\ 'w:fields',
+		\ 'e:embedded',
+		\ 'm:methods',
+		\ 'r:constructor',
+		\ 'f:functions'
+	\ ],
+	\ 'sro' : '.',
+	\ 'kind2scope' : {
+		\ 't' : 'ctype',
+		\ 'n' : 'ntype'
+	\ },
+	\ 'scope2kind' : {
+		\ 'ctype' : 't',
+		\ 'ntype' : 'n'
+	\ },
+	\ 'ctagsbin'  : 'gotags',
+	\ 'ctagsargs' : '-sort -silent'
+\ }
 
 let g:rainbow_active=1
 let g:gutentags_cache_dir="./.git/"
 let g:rainbow_ctermfgs = ['lightblue','magenta']
 
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:go_list_type = "quickfix"
+let g:go_fmt_autosave = 0
