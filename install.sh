@@ -65,3 +65,5 @@ if [ "$con" == "Y" ]; then
 		rm -rf ctags.tar.gz ctags-5.8
 	fi
 fi
+
+mkdir -p ~/.vim/backups

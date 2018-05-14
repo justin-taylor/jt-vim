@@ -59,10 +59,10 @@ map <F4> :execute "vimgrep /" .expand("<cword>") . "/j **" <Bar> cw<CR>
 
 map <C-l> :tabnext<CR>
 map <C-h> :tabprevious<CR>
+nmap <C-[> <C-t>
 
 map tn :tabnew<cr>
 map tl :TagbarToggle<cr>
-nnoremap <C-f> <C-]><CR>
 
 " Vundle Settings
 set rtp+=~/.vim/bundle/vundle/
@@ -93,6 +93,7 @@ Bundle 'osyo-manga/vim-brightest'
 Bundle 'fatih/vim-go'
 Bundle 'ternjs/tern_for_vim'
 Bundle 'vim-scripts/csv.vim'
+Bundle 'ludovicchabant/vim-gutentags'
 
 filetype plugin indent on 
 
