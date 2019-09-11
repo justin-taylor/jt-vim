@@ -99,6 +99,7 @@ Bundle 'vim-scripts/csv.vim'
 Bundle 'ludovicchabant/vim-gutentags'
 Bundle 'sebdah/vim-delve'
 Bundle 'udalov/kotlin-vim'
+Bundle 'vim-scripts/Greplace.vim'
 
 call vundle#end()
 filetype plugin indent on 
