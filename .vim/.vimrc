@@ -96,9 +96,8 @@ Bundle 'osyo-manga/vim-brightest'
 Bundle 'fatih/vim-go'
 Bundle 'ternjs/tern_for_vim'
 Bundle 'vim-scripts/csv.vim'
-Bundle 'ludovicchabant/vim-gutentags'
+Bundle 'hashivim/vim-terraform'
 Bundle 'sebdah/vim-delve'
-Bundle 'udalov/kotlin-vim'
 Bundle 'vim-scripts/Greplace.vim'
 
 call vundle#end()
@@ -135,6 +134,7 @@ autocmd BufNewFile,BufRead *.sls setlocal ft=sls
 autocmd BufNewFile,BufRead *.coffee setlocal ft=coffee
 autocmd BufNewFile,BufRead *.slim setlocal ft=slim
 autocmd BufNewFile,BufRead *.gradle set filetype=groovy
+autocmd BufNewFile,BufRead *.*rc set filetype=sh
 autocmd BufNewFile,BufRead Podfile setlocal ft=ruby
 autocmd BufNewFile,BufRead *.go set filetype=go
 
@@ -186,4 +186,4 @@ let g:rainbow_ctermfgs = ['lightblue','magenta']
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_list_type = "quickfix"
-let g:go_fmt_command = 'goimports'
+let g:go_fmt_command = "goimports"
