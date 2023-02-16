@@ -63,12 +63,15 @@ map <C-h> :tabprevious<CR>
 map tn :tabnew<cr>
 map tl :TagbarToggle<cr>
 
+
 " Vundle Settings
+filetype off
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
+Bundle 'VundleVim/Vundle.vim'
 Bundle 'gmarik/vundle'
 Bundle 'sukima/xmledit'
 Bundle 'SearchComplete'
@@ -82,6 +85,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-markdown'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Shougo/vimproc'
+Bundle 'Shougo/vimshell'
 Bundle 'saltstack/salt-vim'
 Bundle 'hughbien/md-vim'
 Bundle 'ekalinin/Dockerfile.vim'
@@ -92,9 +96,11 @@ Bundle 'osyo-manga/vim-brightest'
 Bundle 'fatih/vim-go'
 Bundle 'ternjs/tern_for_vim'
 Bundle 'vim-scripts/csv.vim'
-Bundle 'udalov/kotlin-vim'
 Bundle 'hashivim/vim-terraform'
+Bundle 'sebdah/vim-delve'
+Bundle 'vim-scripts/Greplace.vim'
 
+call vundle#end()
 filetype plugin indent on 
 
 if bufwinnr(1)
@@ -140,7 +146,7 @@ set backupdir=~/.vim/backups
 set wildignore+=*/build/*,*.so,*.swp,*.zip 
 set wildignore+=*/bin,*/gen,*.class,*.swp,*.zip,*.so
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)|[\/](build|bin|node_modules|dist)$',
+  \ 'dir':  '\v[\/]\.(git|hg|svn)|[\/](build|bin|vendor|node_modules|dist)$',
   \ 'file': '\v\.(exe|jar|so|dll|class|png|jpeg|jpg)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
